@@ -1,11 +1,7 @@
-#### SQL-Injection Payloads
+#### Demo-1: SQL-Injection Payloads
 
-
-#### 1. Normal SQLi
-
-#### 2. Blind SQLi
-
-AND 1=1
+abc' OR 1=1 --
+abc' OR 1 = 1
 
 AND substring(@@version, 1, 1)=5
 
