@@ -9,6 +9,6 @@ netmask 255.255.255.0
 network 192.168.59.0
 broadcast 192.168.59.255
 
-3. Install Openssh & Add navneetk public key in Authorized keys & SSH config in client
+3. Install Openssh & Add navneetk public key in Authorized keys & SSH config in client.Start SSh on persistently.
 4. Install OhMyZSH
 
